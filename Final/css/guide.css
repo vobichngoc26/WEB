@@ -1,0 +1,171 @@
+:root {
+  --green: #2b4d3f;
+  --beige: #f7f3ef;
+  --radius: 12px;
+  --shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  --error-color: #e74c3c;
+  --yellow: #f7c843;
+  --yellow-hover: #ffda5c;
+}
+
+/* ====== BỐ CỤC CHUNG ====== */
+/* ====== SIDEBAR MENU ====== */
+.guide-page {
+  display: flex;
+  align-items: flex-start; /* ✅ không kéo giãn chiều cao */
+  max-width: 1200px;
+  margin: 20px auto;
+  font-family: "Source Sans Pro", sans-serif;
+  color: var(--green);
+  background: transparent; /* ✅ bỏ nền xanh */
+  gap: 0; /* tránh hở viền giữa menu và content */
+}
+.guide-sidebar {
+  background: var(--green);
+  color: #fff;
+  padding: 20px 15px;
+  box-sizing: border-box;
+  border-top-left-radius: var(--radius);
+  border-bottom-left-radius: var(--radius);
+  height: auto; /* ✅ tự động theo nội dung */
+}
+.guide-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.guide-menu li {
+  margin-bottom: 10px;
+}
+
+.guide-menu li a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 18px;
+  border-radius: 0; /* bỏ bo góc */
+  transition: all 0.25s ease;
+  width: 100%; /* 🔥 full ngang khung menu */
+  box-sizing: border-box;
+}
+
+/* Khi hover hoặc đang active */
+.guide-menu li a:hover,
+.guide-menu li a.active {
+  background-color: var(--beige);
+  color: #000; /* chữ đen */
+  width: 200px;
+}
+
+/* Nếu muốn chữ vẫn màu xanh đậm thay vì đen */
+.guide-menu li a.active {
+  color: black;
+  font-weight: 700;
+}
+
+/* ====== NỘI DUNG CHÍNH ====== */
+.guide-content {
+  flex: 1;
+  background: #ffffff;
+  padding: 40px;
+  line-height: 1.8;
+  text-align: justify;
+  color: #000;
+  border-left: 2px solid #e0e0e0;
+  border-top-right-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+  text-indent: 30px;
+}
+.guide-content ol,
+.guide-content ul {
+  padding-left: 40px;     /* tạo thụt đầu dòng cho toàn bộ list */
+  margin-left: 0;          /* bỏ margin mặc định */
+}
+
+.guide-content li {
+  text-indent: 0;          /* bỏ indent ảnh hưởng từ đoạn văn */
+  padding-left: 5px;       /* khoảng cách nhỏ giữa số và chữ */
+  margin-bottom: 8px;
+  line-height: 1.7;
+}
+
+/* Nếu có list lồng nhau thì căn thụt gọn hơn */
+.guide-content ol li ul,
+.guide-content ul li ul {
+  padding-left: 25px;
+}
+
+/* Ẩn các section trừ section active */
+.guide-content section {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.guide-content section.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Tiêu đề */
+.guide-content section h2 {
+  font-size: 26pt;
+  margin-bottom: 12px;
+  color: var(--green);
+}
+
+/* ====== HÌNH ẢNH ====== */
+.guide-image {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0 40px 0;
+}
+
+.guide-image img {
+  width: 85%;
+  height: auto;
+  transition: transform 0.3s ease;
+  border-radius: 8px;
+}
+
+.guide-image img:hover {
+  transform: scale(1.02);
+}
+
+/* ====== BƯỚC HƯỚNG DẪN ====== */
+.guide-steps {
+  line-height: 1.8;
+  font-size: 17px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.guide-steps ol {
+  padding-left: 20px;
+}
+
+.guide-steps li {
+  margin-bottom: 12px;
+}
+
+.guide-steps b {
+  color: var(--green);
+}
+
+/* ====== FAQ ====== */
+#faq div {
+  background: #fff;
+  padding: 35px 45px;
+  line-height: 1.8;
+  font-size: 17px;
+  max-width: 950px;
+  margin: 0 auto;
+  box-shadow: none;
+}
+
+#faq h3 {
+  margin-top: 25px;
+  font-size: 20px;
+}

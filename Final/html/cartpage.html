@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Libra – Giỏ hàng của bạn</title>
+  <style>
+  body {
+  background: linear-gradient(to right, #f3efe9 0%, #f7f3ef 20%, #f7f3ef 80%, #f3efe9 100%) !important;
+}
+fieldset {
+  width: 100%;
+  height: auto;
+  padding: 20px 24px;     /* tạo khoảng trống bên trong */
+  margin: 20px 0;         /* tạo khoảng cách với phần khác */
+  border: 1px solid #2b4d3f;  /* hoặc màu bạn đang dùng */
+  border-radius: 12px;    /* bo góc cho mềm */
+  background-color: #faf8f6
+}
+legend {
+  font-family: Source sans pro;
+  color: var(--green);
+  font-size: 20pt;
+  font-weight: bold;
+  
+}
+
+</style>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../css/cartstyle.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+  <div class="bg-shape" aria-hidden="true"></div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="navbar">
+    <div class="logo-box">
+      <img src="/images/Libralogo.png" class="logo" alt="Logo Libra">
+      <div class="brand-text">
+        <h3>Libra</h3>
+        <p>BOOK LOVERS</p>
+      </div>
+    </div>
+
+    <nav class="nav-links">
+      <a href="homepage.html">Trang chủ</a>
+      <a href="#">Mua sách</a>
+      <a href="guide.html">Hướng dẫn</a>
+      <a href="#">Đấu giá</a>
+      <a href="#">Bán sách</a>
+      <a href="#">Tin tức</a>
+    </nav>
+
+    <div class="nav-actions">
+      <div class="search-box">
+        <input type="text" placeholder="Tìm kiếm...">
+        <button>🔍</button>
+      </div>
+
+      <div class="cart-icon">
+        <a href="cartpage.html" title="Giỏ hàng">
+          🛒 <span class="cart-count">2</span>
+        </a>
+      </div>
+    </div>
+  </header>
+    <section class="cart-page">
+  <div class="cart-layout">
+    <!-- ===== CỘT TRÁI: GIỎ HÀNG ===== -->
+    <div class="cart-left box">
+
+      <!-- 🛒 GIỎ HÀNG MUA NGAY -->
+      <div class="cart-section">
+        <h2 style="color:#2b4d3f">Giỏ hàng mua ngay</h2>
+        <div class="cart-table">
+          <table>
+            <thead>
+              <tr>
+                <th style="width:400px;">Thông tin sản phẩm</th>
+                <th>Số lượng</th>
+                <th>Giá tiền</th>
+                <th>Thành tiền</th>
+              </tr>
+            </thead>
+            <tbody id="normal-cart-body"></tbody>
+          </table>
+          <div class="total-line">
+            Tổng cộng: <span id="normal-total">0₫</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 🏆 GIỎ HÀNG ĐẤU GIÁ THÀNH CÔNG -->
+      <div class="cart-section">
+        <h2 style="color:#b84c32;">Sách bạn đã đấu giá thành công</h2>
+        <div class="cart-table">
+          <table>
+            <thead>
+              <tr>
+                <th style="width:400px;">Sách đấu giá</th>
+                <th>Giá thắng</th>
+                <th>Thành tiền</th>
+                <th> Số lượng </th>
+              </tr>
+            </thead>
+            <tbody id="auction-cart-body"></tbody>
+          </table>
+          <div class="total-line">
+            Tổng cộng: <span id="auction-total">0₫</span>
+          </div>
+        </div>
+      </div>
+      <!-- 🌟 GỢI Ý SẢN PHẨM -->
+      <div class="suggested-products">
+        <fieldset>
+  <legend> Sách Hay Bán Chạy </legend>
+  <div class="product-list">
+    <div class="product-card">
+      <img src="../images/chậm rãi.png" alt="" >
+      <h3>Bàn về sự chậm rãi</h3>
+      <p>120.000đ</p>
+      <button class="add-to-cart">Thêm vào giỏ</button>
+      <img src="../images/addicon.png" alt="Giỏ" class="cart-icon-click"/>
+    </div>
+
+    <div class="product-card">
+      <img src="../images/truy đuổi khói tuyết.png" alt="">
+      <h3> Truy đuổi khói tuyết</h3>
+      <p>150.000đ</p>
+      <button class="add-to-cart"> Thêm vào giỏ</button>
+      <img src="../images/addicon.png" alt="Giỏ" class="cart-icon-click"/>
+    </div>
+
+    <div class="product-card">
+      <img src="../images/cuoc-doi-bon-tau-cua-toi-5.jpg" alt="">
+      <h3>Cuộc đời bôn tẩu của tôi</h3>
+      <p>95.000đ</p>
+      <button class="add-to-cart">Thêm vào giỏ</button>
+      <img src="../images/addicon.png" alt="Giỏ" class="cart-icon-click"/>
+    </div>
+
+    <div class="product-card">
+      <img src="../images/truoc khi tro thanh quai vat.png" alt="">
+      <h3> Trước khi trở thành quái vật</h3>
+      <p>110.000đ</p>
+      <button class="add-to-cart"> Thêm vào giỏ</button>
+      <img src="../images/addicon.png" alt="Giỏ" class="cart-icon-click"/>
+    </div>
+    
+  </div>
+</div>
+</fieldset>
+    <!-- ===== CỘT PHẢI: Địa chỉ + Thanh toán ===== -->
+    <div class="cart-right box">
+      <!-- Địa chỉ -->
+      <div class="invoice-container">
+  <h2>Hóa đơn tạm tính</h2>
+
+  <div class="invoice-summary">
+    <p><strong>Tổng đơn hàng:</strong> <span id="total-items">0</span> sản phẩm</p>
+    <div class="promo">
+  <p><strong>Giảm giá:</strong> <span id="discount-amount">0₫</span></p>
+  <p id="discount-message" style="color: var(--green); font-size: 14px; margin-top: 4px;"></p>
+</div>
+    <p><strong>Thành tiền:</strong> <span id="total-amount">0₫</span></p>
+
+
+    <div class="payment-info">
+  <p><strong>Phương thức thanh toán:</strong></p>
+  <div class="payment-options">
+    <label>
+      <input type="radio" name="payment" value="momo">
+      <img src="../images/momo.png" style="width:50px; height:50px;"/>
+      Thanh toán qua MoMo
+    </label>
+    <label>
+      <input type="radio" name="payment" value="vnpay">
+      <img src="../images/vnpay.png" style="width:50px; height:50px;"/>
+      Thanh toán qua VNPay
+    </label>
+    <br/>
+    <span class="error-message">Đây là trường bắt buộc</span>
+  </div>
+</div>
+  </div>
+
+  <div class="receiver-info address-management">
+    <div class="address-section">
+        <div id="no-address" style="display:none;">Bạn hiện tại chưa có địa chỉ nhận hàng.</div>
+        <div id="address-list"></div>
+<button id="addAddressBtn" class="add-address-btn">+ Thêm địa chỉ mới</button>
+    </div>
+    
+
+    <div id="address-form-container" class="address-form-container" style="display:none;">
+      <fieldset>
+      <h3>Thông tin người nhận</h3>
+
+        <div class="form-grid-3">
+            <div class="form-group">
+                <label>Họ tên</label>
+                <input type="text" id="full-name" placeholder="Nguyễn Văn A" class="required">
+                <span class="error-message">Đây là trường bắt buộc</span>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="email" placeholder="email@example.com" class="required">
+                <span class="error-message">Đây là trường bắt buộc</span>
+            </div>
+            <div class="form-group">
+                <label>Số điện thoại</label>
+                <input type="tel" id="phone" placeholder="0123 456 789" class="required">
+                <span class="error-message">Đây là trường bắt buộc</span>
+            </div>
+        </div>
+        
+        <br/>
+        <h3>Địa chỉ nhận hàng</h3>
+        <div class="form-grid-2">
+            <div class="form-group">
+                <label>Tỉnh/Thành</label>
+                <input type="text" id="city" placeholder="TP. Hồ Chí Minh" class="required">
+                <span class="error-message">Đây là trường bắt buộc</span>
+            </div>
+            <div class="form-group">
+                <label>Quận/Huyện</label>
+                <input type="text" id="district" placeholder="Quận 1" class="required">
+                <span class="error-message">Đây là trường bắt buộc</span>
+            </div>
+            <div class="form-group">
+                <label>Phường/Xã</label>
+                <input type="text" id="ward" placeholder="Phường Bến Nghé" class="required">
+                <span class="error-message">Đây là trường bắt buộc</span>
+            </div>
+            <div class="form-group">
+                <label>Số nhà</label>
+                <input type="text" id="house-number" placeholder="123 Lê Lợi" class="required">
+                <span class="error-message">Đây là trường bắt buộc</span>
+            </div>
+        </div>
+
+        <br/>
+        <div class="form-group horizontal">
+            <label>Loại địa chỉ</label>
+            <div class="radio-options">
+                <label class="radio-card">
+                    <input type="radio" name="address_type" id="nharieng" checked>
+                    <span class="radio-text">Nhà riêng</span>
+                </label>
+                <label class="radio-card">
+                    <input type="radio" name="address_type" id="coquan">
+                    <span class="radio-text">Cơ quan</span>
+                </label>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label><input type="checkbox" id="default-address"> Đặt làm địa chỉ mặc định</label>
+        </div>
+
+        <div class="form-group full-width">
+            <label>Ghi chú (optional)</label>
+            <textarea rows="3" id="note" placeholder="Ghi chú thêm cho đơn hàng..."></textarea>
+        </div>
+
+        <br/>
+        <label> <input type="checkbox" id="remember-info"> Ghi nhớ thông tin địa chỉ </label>
+
+        <div class="form-actions">
+            <button id="saveAddressBtn">Lưu địa chỉ</button>
+            <button id="cancelAddressBtn">Hủy</button>
+        </div>
+    </div>
+    </fieldset>  
+    <button class="confirm-btn">Xác nhận thanh toán</button>
+</div>
+<!-- ===================== MODALS ===================== -->
+  <!-- Modal xác nhận xóa sản phẩm -->
+<div class="modal" id="deleteModal">
+  <div class="modal-content">
+    <h3>Bạn có chắc muốn xóa sản phẩm này?</h3>
+    <div class="modal-actions">
+      <button class="btn-yes" id="confirmDelete">Có</button>
+      <button class="btn-no" id="cancelDelete">Không</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal xác nhận xóa địa chỉ -->
+<div class="modal" id="deleteAddressModal">
+  <div class="modal-content">
+    <h3>Bạn có chắc muốn xóa địa chỉ này không?</h3>
+    <div class="modal-actions">
+      <button class="btn-yes" id="confirmDeleteAddress">Có</button>
+      <button class="btn-no" id="cancelDeleteAddress">Không</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal thanh toán thành công -->
+<div class="modal" id="checkout_success">
+  <div class="modal-content">
+    <h3>
+      Xin cảm ơn! Bạn đã thanh toán thành công.<br>
+      Vui lòng kiểm tra Zalo để nhận thông tin phí vận chuyển!
+    </h3>
+  </div>
+</div>
+
+<!-- Modal xác nhận thanh toán -->
+<div class="modal" id="confirmPaymentModal">
+  <div class="modal-content">
+    <h3>Bạn có chắc chắn muốn thanh toán không?</h3>
+    <div class="modal-actions">
+      <button class="btn-yes" id="confirmPaymentYes">Có</button>
+      <button class="btn-no" id="confirmPaymentNo">Không</button>
+    </div>
+  </div>
+</div>
+    </div>
+    </div>
+  </div>
+    </section>
+
+
+    <footer>
+        © 2024 Libra – Sách cũ thư viện. All rights reserved.
+    </footer>
+    <script src="../js/cartscript.js"></script>
+  </body>
